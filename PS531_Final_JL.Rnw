@@ -1,0 +1,565 @@
+% PS531 Final Pre-Analysis Plan
+
+% Created by Jing Li, May 2021
+
+\documentclass{article}
+\DeclareMathSizes{12}{30}{16}{12}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{amsmath}
+\renewcommand{\thesection}{\Roman{section}}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\graphicspath{ {./} }
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+\title{National Identity, Political Trust and Political Participation}
+\author{Jing Li}
+\date{}
+\maketitle
+
+\doublespacing
+\vspace{.2in}
+\section*{Introduction}
+The question we are interested in here is how might political trust mediates national identity's effect on political participation. Research has shown that national identity promotes conventional form of political participation while discouraging unconventional form of political participation. Here we want to investigate what is the causal mechanism behind this divergent effects of national identity on political participation, and how might political trust plays a role in it. Individuals who trust the functioning of the political system and politics in general are expected to participate more in  conventional political activities and less in unconventional political activities, and individuals who both hold strong sense of national identity and trust in politics are expected to show higher level of conventional political participation and lower level of unconventional political participation than individuals who only hold strong national identity.
+
+Knowing political trust's mediation on national identity's effect on political participation has both practical and theoretical importance. Theoretically we will be better placed to answer the question of the causal mechanisms behind national identity's divergent effects on political participation and whether political trust is the missing piece in between. Additionally it will likely offer us better advice on how best to stimulate citizens' both conventional and unconventional types of political participation and how best to leverage individuals' national identity and political trust to achieve this purpose. Increased political participation contributes to the democratic life of a country, and with both national identity and political trust being important ingredients of civil society, disentangling the relationships between both national identity and political trust and political participation will likely enlighten us on the ways to build a civil society that is conducive to political participation, civic engagement, and social activism.
+
+Political trust has long been thought to be influential on political participation in a number of ways. First, citizens need a basic form of trust in the political process before embarking on various forms of political participation, and a lack of political trust will likely mean that citizens abandon elite-directed forms of political participation and in favor of elite-challenging participation acts (Levi and Stoker, 2000). And citizens need positive orientations towards the political system while negative attitudes towards the political system will lead to alienation, which erodes the legitimacy of the democratic system and increases the democratic instability over time (Almond and Verba, 1963). Additionally, "conventional participation is a manifestation of support for the political order ... The presence of dissent in democratic societies is often indicated by unconventional modes of action"(Barnes and Kaase 1979: 444). That is distrusting citizens are more likely to engage in unconventional forms of political participation while trusting citizens are more likely to engage in conventional forms of political participation. 
+
+Because of political trust's different effects on conventional and unconventional forms of political participation and the fact that national identity has a divergent effects on conventional and unconventional forms of political participation, it is reasonable to hypothesize that political trust is likely to have a mediating effect on national identity's effects on political participation, that is:
+\newline   \textbf{H1}: Political trust will have a positive effect on national identity's positive effect on conventional form of political participation.
+\newline   \textbf{H2}: Political trust will have a negative effect on national identity's negative effect on unconventional form of political participation.
+
+\section*{Data and Methods}
+To assess the mediating effects of political trust on national identity's effects on different forms of political participation, we leverage the World Values Survey data. The World Values Survey is a representative comparative social survey conducted globally every 5 years. It is also one of the most authoritative and widely-used cross-national surveys in the social sciences. The specific data we will be using are Wave 6 data covering the period of 2010 to 2014. The actual data only have record for years 2010, 2011, and 2014. In fact, a little more than 70 percent of the data points are in the two consecutive years of 2010 and 2011. Because of this data concentration in the consecutive two years, in our analysis, we will not make adjustment for cross-year differences, rather we assume that there are not much differences in the outcome of political participation that are due to which year the survey question was asked. This could potentially bring certain bias to our analysis results especially considering the possible difference between the first two years 2010 and 2011 and year 2014, however we regard this bias as likely to be small and won't significantly impact our results.
+
+Although we are leveraging a survey data, this is not close to be a survey experiment study, instead it is closer to be a observational study as we treat what the survey respondents responded as close to be what actually happened either in the real world or in the respondents' belief system. And in utilizing a survey data source, even though it is a representative and authoritative one, we are also subject to the common issues survey data are associated with. For example, there is the issue of social desirability bias, that is survey respondents could show a higher level of national identity than they really are because they want to exhibit the socially desired image of strongly identifying with the nation. Indeed in the data we have, survey respondents in most countries disproportionately (strongly or moderately) identifying with the nation. This will likely impact the analysis we are going to do in subsequent steps as in most countries covered in the data only a small portion of the survey respondents don't identify with the nation. To address the concern of highly unbalanced data on the main independent variable (national identity), we decide to narrow our scope of study to only five political entities (four countries and one region) that do have a significant number of individuals that don't hold strong national identity. This more focused scope of the study is necessary especially considering the fact that we also need to adjust for covarite variables that are likely to impact individuals' two types of political participation. The four countries and one region we study here are Estonia, Ukraine, Brazil, Japan, and Hong Kong.
+
+As both national identity and political trust concern individuals' beliefs, survey questions are a good way to measure these two items. And it would be pretty difficult to take a randomized design approach and randomly assign individuals to either the strong national identity group or the weak national identity group because individuals' national identity simply cannot be assigned by external experimenters, it has to be held by individuals themselves. And we expect survey respondents to reveal both true beliefs of national identity and political trust and true levels of political participation in their responses. The World Values Survey data is a representative comparative and authoritative cross-national survey, and so it will enable us to examine the cross-national difference in the relationships between national identity, political trust and political participation as well as saving us the time and resources to implement a brand new large-scale survey. However, in addition to the social desirability bias mentioned above, inevitably there are also measurement errors. The measurement errors could come from bad design of survey questions that don't accurately capture individuals' national identity, political trust, or different forms of political participation. It could also come from inaccurate response from survey subjects either because they don't understand a question well or because they don't think seriously enough of the survey questions and provide casual or random answers as a result. So ideally we would like to take measurement errors into account in our subsequent analysis steps. Because of the long list of questions asked in the survey, we are also slightly concerned about the consistency of the quality of survey answers provided by respondents.
+
+We measure national identity using respondents' answer to the question of how proud they are of their nationality. We measure political trust using respondents' answers to the following three questions: confidence in political parties, confidence in civil service, and confidence in government (in the nation's capital), and we calculate the average of these three survey responses as the final political trust measure. We measure individuals' conventional political participation with their voting at the national level, and we measure individuals' unconventional political participation with their involvement in petition, boycotts, peaceful demonstrations,  strikes, and any other act of protests. We calculate the average of individuals' responses to the unconventional political participation questions and use it to denote individuals' overall level of unconventional political participation.
+
+We need to consider a number of covariate variables that are likely to have an impact on individuals' levels of political participation of different forms. The main factors we consider here include age, gender, highest level of education attained, and employment status. Before we undertake any covariate adjustment, first we perform bivariate exploratory data analysis on how much these variables are impacting the political participation of the survey respondents. The results of the bivariate exploratory data analysis show that overall the political participation levels between male and female are not substantially different, therefore we decide not to perform covariate adjustment for gender. The other three variables are all found to have significant impact on subjects' political participation levels. That is individuals of different age groups show different levels of political participation, for example, individuals aged 80 or over participate much less compared with individuals of other age groups. Individuals having different levels of education show different levels of political participation, for example, individuals having higher levels of education also exhibit higher levels of political participation. And individuals working full time or retired show much higher levels of political participation than individuals having other types of employment status. For example, in the following Figure 1, we can see that both employment status and highest education level attained are highly correlated with voting at the national level especially for Estonia and Hong Kong, meaning that these two variables are likely to have an impact on voting at the national level in the data we have.
+
+<<echo=FALSE, fig=TRUE>>=
+library(GGally)
+library(dplyr)
+
+mydata <- na.omit(read.csv("C:/Users/ali/Documents/R/ps590/519/PS519_data.csv"))
+
+fitdata <- subset(mydata, V211 == "2" | V211 == "3")
+
+fitdata$cpp <- rowMeans(fitdata[ , c("V85", "V88")], na.rm=TRUE)
+fitdata$ncpp <- rowMeans(fitdata[ , c("V86", "V87", "V89")], na.rm=TRUE)
+fitdata$pp <- rowMeans(fitdata[ , c("V85", "V88", "V86", "V87", "V89")], na.rm=TRUE)
+
+#fitdata$memship <- rowMeans(fitdata[ , c("V28", "V25", "V30", "V32", "V34", "V35")], na.rm=TRUE)
+
+fitdata$p_trust <- rowMeans(fitdata[ , c("V115", "V116", "V118")], na.rm=TRUE)
+
+fit_data <- fitdata[, c("C_COW_ALPHA", "V211", "cpp", "ncpp", "pp", "p_trust", "V227", "V116", "V84","V242", "V240", "V229", "V29", "V191", "V248", "V115", "V105", "V118")]
+
+work_data <- subset(fit_data, V248 != 1 & V229 != 8 & V242 <= 80)
+
+work_data$V29 = ifelse(work_data$V29 %in% c(0) , 2, 
+              ifelse(work_data$V29 %in% c(2), 0, work_data$V29))
+
+work_data$V211 = ifelse(work_data$V211 %in% c(2) , 0, 1)
+
+work_data <- work_data %>% 
+  rename(
+    Voting = V227,
+    E_Status = V229,
+    Education = V248,
+    Age = V242
+    )
+
+brics <- c("EST", "HKG", "JPN")
+bricsdata <- subset(work_data, C_COW_ALPHA %in% brics, select=c(Voting, E_Status, Education, C_COW_ALPHA))
+bricsdata$C_COW_ALPHA <- factor(bricsdata$C_COW_ALPHA)
+ggpairs(bricsdata, columns = 1:3, ggplot2::aes(colour=C_COW_ALPHA), title = ("Figure 1: Pairwise Correlation Between The Variables"), cardinality_threshold = 72)
+@
+
+In this study we use matching to adjust for the impact of age, education level and employment status on the two types of political participation. To increase the sample size, we use full matching. In the following plot, we can see that the full matching we did significantly reduced the standardized differences along the dimensions of age, employment status and highest education level attained.
+
+<<echo=FALSE, fig=TRUE>>=
+library("optmatch")
+library("RItools")
+fullmatch <- fullmatch(V211 ~ Age + E_Status +  Education, data = work_data)
+myb <- xBalance(V211 ~ Age + E_Status +  Education + strata(fullmatch), data=work_data, report = c("adj.means", "std.diffs", "z.scores", "chisquare.test"))
+plot(myb, main = "Covariates Adjustment Balance Test")
+@
+
+We also focus our study on people with moderately strong national identity and people with moderately weak national identity. We make the assumption that individuals in the moderately strong national identity group and individuals in the moderately weak national identity group are close to be randomly assigned. Their identification with the nation or not is only at the moderate level anyways. That is people in the moderately strong national identity group could choose to identify themselves as moderately weak national identity on another day (other than the survey conduction date) just due to some random factors, and similarly people in the moderately weak national identity group could choose to identify themselves as moderately strong national identity on another day (other than the survey conduction date) just due to some random factors. And conditional on adjusting for the influences of age, employment status and highest level of education attained, we want to compare the political participation level (of both conventional and unconventional types) for these two groups and ascertain the mediating effects of political trust on this relationship.
+
+In the data we have, for all the variables we are interested in, there are no missing values associated with them. That is because the World Values Survey already dealt with missing values before the data is released. While creating the data, missing values were embedded into one or more categories already existing in the variable where missing values occurred. And different values are imputed for missing values based on the reason why the value of a variable is missing in the first place. For example, for individuals' voting at the national level, missing value could be imputed with five different values, if individuals dropped out of the survey or provided inappropriate response or refused to answer the question, -5 is given, if individuals were not asked the question in the survey, -4 is given, if an individual has no right to vote, -3 is given, if an individual didn't provide an answer, -2 is given, and if we don't know the reason why the missing value occurred, -1 is given. Similar strategies were employed for dealing with missing values for other variables, for example employment status and national identity. 
+
+Generally speaking, if we have missing values with the covariate variables and they don't impact our focal variable, national identity in this case, it is less of a concern. If we have missing values with either the focal variable or the outcome variable, political participation in this case, the most commonly used approach is imputation as has been done by the team who created the World Values Survey Wave 6 data. We could also perform sensitivity analysis by comparing analysis results with and without the missing value observations and see how much of an impact these missing value observations have on the analysis results. If the variable having missing value is not the focal variable or if the variable having missing values doesn't strongly correlate with the focal variable, then we can remove these missing value observations and proceed. Again a sensitivity analysis will be helpful here.
+
+\section*{Hypothesis Testing}
+We want to test mediating effect of political trust on national identity's effects on political participation, but at the same time we also want to test the main effects, that is national identity's effects on political participation. If there is a significant mediating effect (or interaction effect between political trust and national identity), then we can ignore the hypothesis testing of the main effects because if there doesn't exist the main effects, the mediation effect won't exist as well. As we are assuming that individuals in the moderately strong national identity group and individuals in the moderately weak national identity group can be regarded as close to be randomly assigned, according to Fisher's null hypothesis of no treatment effect, that is national identity doesn't have an effect on political participation, a randomization test is appropriate here. As we focus our study on four countries and one region, it's safe to assume that there is a country-specific fixed effect of national identity on the two forms of political participation. Considering the fact that we need to complete the triple task of adjusting for covariates, testing the mediating effect of political trust on the main effect, and considering the two-level fixed and random effects, a multilevel design with interaction term for political trust and national identity seems appropriate here. However, this is a rather complicated design and the data for our focused group of four countries and one region have 3569 observations, doing a randomization test for a complicated design structure even for a rather limited number of permutations consumes a lot of computing resources, is likely to overstretch the limited computing resources available, and will take a rather long processing time. Therefore, here we decide to do a prototype analysis on Japan first, the country with the most balanced data on national identity. And we expand our analysis to the other countries and region using the same approach we implement here for the Japan case (all the following presented analysis will be for Japan only as prototype, however same analysis will be extended to the other political entities).
+
+Even though we are most interested in the mediation effect of political trust, the randomization will be performed on the focal variable, national identity, because the main effect of national identity on political participation is the basis for the mediation effect. And the null hypothesis here is that there is no mediation effect of political trust on national identity's effects on political participation. We perform a full matching to adjust for the covariate variables (age, employment status, highest level of education attained). For each of the simulation sample generated from randomization, We fit the robust linear regression model with interaction term for national identity and political trust and use the full matching results as the fixed effect. The interaction term coefficient from the model fit results indicates the mediating effect of political trust on national identity's effect on political participation. This interaction term coefficient will be used as our test statistic\footnote{There definitely could exist better hypothesis test for mediating effect or interaction term than the one we implement here. However, because of time constrainst, this is the test we choose to perform here.}. The same model will be fitted for the actual data we have and the interaction term coefficient from the model fit is our observed test statistic. The null distribution of the test statistic is the distribution of the interaction term coefficient generated from the randomized samples, 1000 samples in this case. We want to find the probability of rejecting the null hypothesis when the null hypothesis is assumed to be true. That is the probability when the observed test statistic is outside of or on the boundary of the null distribution of the test statistic. The two-sided p value we obtained here is 0.012, which is strong evidence against the null hypothesis. So we have strong evidence to reject the null hypothesis of no mediation effect of political trust. It is much more likely that there does exist a true mediation effect of political trust on national identity's effects on political participation. The following figure offers a graphic representation of the null distribution of test statistic and the observed test statistic. An alternative ANOVA test performed for the interaction term gives a similar p value of 0.015. Therefore, though the randomized test implemented here for testing the mediation effect of political trust may have room for improvement, it largely won't bias our subsequent statistical inferences. 
+
+<<echo=FALSE, fig=TRUE>>=
+library("stargazer")
+library("lme4")
+library("estimatr")
+library("randomizr")
+#t(work_data %>%
+#  summarise_all(funs(sum(is.na(.)))))
+
+#work_data$country <- ifelse(work_data$C_COW_ALPHA %in% c("BRA") , 1,
+#              ifelse(work_data$C_COW_ALPHA %in% c("EST"), 2,
+#              ifelse(work_data$C_COW_ALPHA %in% c("HKG"), 3,
+#              ifelse(work_data$C_COW_ALPHA %in% c("JPN"), 4, 5
+#                     ))))
+
+j_data <- subset(work_data, C_COW_ALPHA == "JPN")
+j_fullmatch <- fullmatch(V211 ~ Age + E_Status +  Education, data = j_data)
+
+lmermodel <- lm_robust(Voting ~ V211 * p_trust, fixed_effects = j_fullmatch, data=j_data)
+obsTestStat1 <- unname(lmermodel$coefficients)[3]
+
+new_experiment <- function(){
+    reshuffled <- j_data 
+    reshuffled$V211 <- complete_ra(N = nrow(reshuffled))
+    lmer_m <- lm_robust(Voting ~ V211 * p_trust, fixed_effects = j_fullmatch, data=reshuffled)
+    unname(lmer_m$coefficients)[3]
+}    
+set.seed(20210501)
+simulated_coef <- unname(replicate(1000, new_experiment()))
+
+#mean(simulated_coef >= obsTestStat1)
+#2 * min(mean(simulated_coef >= obsTestStat1), mean(simulated_coef <= obsTestStat1))
+
+## plot the distributions that represent the null hypothesis 
+## and the observed values for the test statistics.
+plot(density(simulated_coef), xlim = range(simulated_coef), main = "Hypothesis Testing on the Mediation of Political Trust")
+rug(simulated_coef, line = -1, lwd = 2)
+#lines(density(simulated_coef), lty = 2)
+abline(v = obsTestStat1)
+
+#aov_model1 <- aov(Voting ~ V211 * p_trust, data=j_data)
+#summary(aov_model1)
+@
+
+When there are multiple interventions or treatments, there are multiple comparisons to make with the control group. And to perform corresponding hypothesis testing on the treatment effects, it's necessary that multiple hypothesis testings are needed. When the multiple comparisons are independent, the chance of making at least one Type I error (rejection of a true null hypothesis) increases approximately proportionally with the number of comparisons to make (Araujo, 2020). This multiple comparison-derived inflation of the critical p value is known as the family wise error rate. However, as we are not implementing multiple treatments and multiple hypothesis tests here, we don't need to worry too much about family wise error rate or false discovery rate.
+
+To judge the performance of the hypothesis testing we implemented, we have to perform a substantially number of testing using the same test procedure and see if the testing procedure shows desired properties overall across all the tests performed. The first property of the test procedure we care about is the false positive rate, this is the probability of the test rejecting a null hypothesis when the null hypothesis is actually true. We create a new experiment that has no mediation effect of political trust on the main effect of national identity on political participation, and we perform 100 tests to see how many times the test rejects the null hypothesis of no mediation effect of political trust (when the null hypothesis is actually true in this case), and the false positive rate we obtained is pretty low at 0.04, meaning that the chance that the hypothesis testing we perform here makes a false positive error is pretty low, therefore, it is a fairly good test from this perspective.
+
+We also care about the power of the test, that is the ability of the test to reject the null hypothesis when the null hypothesis is actually false, namely the proportion of times the test is able to detect a mediation effect of political trust when a mediation effect actually exists. We also perform 100 tests here to measure the power of the test we implemented here. The obtained power of the test is pretty high at over 0.95, meaning that over 95 percent of time the test is able to detect a mediation effect of political trust on national identity's effect on political participation when the mediation effect actually exists.
+
+<<echo=FALSE, eval=FALSE>>=
+library(foreach)
+library(doParallel)
+cl <- makeCluster(2) ## 4 cores
+registerDoParallel(cl)
+
+fprfn <- function(simulations, outcome, mediation, fixed_eff) {
+  outpaired <- outcome - median(outcome)
+  N <- nrow(j_data)
+  output <- foreach(1:simulations,
+    .packages = "randomizr",
+    .export = c("lm_robust"),
+    .combine = "c"
+  ) %dopar% {
+    newz <- complete_ra(N)
+    newzpaired <- newz - median(newz)
+    sim_p <- summary(lm_robust(outpaired ~ newzpaired * mediation, fixed_effects = fixed_eff))$coeff[3,4]
+    return(sim_p)
+  }
+  return(output)
+}
+
+set.seed(531)
+results2a <- fprfn(100, outcome = j_data$Voting, mediation = j_data$p_trust, fixed_eff = j_fullmatch)
+
+#mean(results2a < .05)
+
+powerfunc <- function(simulations, outcome, mediation, fixed_eff) {
+  N <- nrow(j_data)
+  output <- foreach(1:simulations,
+    .packages = "randomizr",
+    .export = c("lm_robust"),
+    .combine = "c"
+  ) %dopar% {
+    newz <- complete_ra(N)
+    newoutcome <- newz * (-0.8071611) + mediation * (-0.02894976) + newz * mediation * (0.29855441) 
+    #newzpaired <- newz - mean(newz)
+    #newoutcome <- outcome - newz * mediation  * effect
+    #newoutcomePaired <- newoutcome - mean(outcome)
+    sim_p <- summary(lm_robust(newoutcome ~ newz * mediation, fixed_effects = fixed_eff))$coefficients[3, 4]
+    return(sim_p)
+  }
+  return(output)
+}
+
+#sizes <-seq(0.25, 0.45, 0.025)
+set.seed(531)
+res <- powerfunc(100, outcome = j_data$Voting, mediation = j_data$p_trust, fixed_eff = j_fullmatch)
+#mean(res < .05)
+@
+
+\section*{Estimation}
+To estimate the mediation effect of political trust on national identity's effects on both types of political participation, we leverage the Declare Design framework in R. Our assumption here is that there does exist a non-zero average treatment effect of national identity on political participation, and our research interest is to decompose this average treatment effect into direct and indirect effects. The indirect effect is channeled from national identity to political participation through the mediator political trust, while the direct effect goes directly from national identity to political participation. We define a population of size N, the number of observations we have in the actual data for Japan, 574 in this case.
+
+First, we assume that there is no correlation between the error term of the mediator regression (regress the mediator on the treatment, national identity) and one of the outcome regression (regress the outcome political participation on national identity, the mediator, and their interaction). If there does exist a correlation between the two, the estimation procedure is likely to perform differently. To declare the potential outcomes, we leverage the coefficient estimates from both the mediator regression and the outcome regression using the actual data we have. We exclude the coefficients for the intercept terms, so there are four coefficients here, one from the mediator regression indicating the effect of the focal variable national identity on the mediator variable political trust, the other three coefficients are from the outcome regression indicating the effects of national identity, political trust, and their interaction term on political participation respectively. We define two potential outcomes for the mediator variable, one is when the treatment exists, that is individuals having moderately strong national identity, and the other one is when the treatment doesn't exist, that is individuals having moderately weak national identity. We also define four potential outcomes for the outcome variable political participation: one is when the treatment doesn't exist and the mediator has the value it would have when the treatment doesn't exist; the second one is when the treatment does exist and the mediator has the value it would have when the treatment exists; the third one is when the treatment doesn't exist and the mediator has the value it would have when the treatment exists; and the fourth one is when the treatment does exist and the mediator has the value it would have when the treatment doesn't exist\footnote{The detailed specification can be seen in the code appendix.}(DeclareDesign, 2021).
+
+Our estimands here are the average effects of national identity on the mediator political trust, the direct average effects of national identity on political participation, and the indirect average effects of national identity on political participation that run through political trust. We assign individuals to have either moderately strong or moderately weak national identity using complete random assignment. And to estimate the average effects, we use robust linear regressions, first regress the mediator on the treatment national identity, and then regress political participation on national identity, the mediator political trust, and the interaction term of national identity and political trust. We create 500 simulated samples for estimating each average effect (to save time). 
+
+The diagnosis statistics are shown in the following Table 1. It can be observed that under the assumption of no correlation between the error term of the mediator regression and one of the outcome regression, the estimators perform pretty well. The bias in estimation is pretty low, -0.16 and 0.11 for estimating the direct effects of national identity on voting at the national level and even lower at -0.01 for estimating the indirect effect of national identity on voting at the national level through political trust, the bias in estimating the average effect of national identity on political trust is 0.001, really small again considering that the true effect is 0.182. Stand errors measure how spread out the estimation statistics are. Standard errors for all the estimation bias terms are really small. The root mean squared error (RMSE), which measures how spread out estimates are from the true estimand, is also quite small for estimation of all estimands. The largest RMSE are 0.345 and 0.307 for estimating the direct effects of national identity on voting at the national level, RMSEs for estimation of other average effects are at around 0.3 or even smaller. Standard errors for estimation RMSE of all average effects are quite small at 0.01 or smaller. 
+
+The coverage of estimation of all average effects is pretty high at between 0.91 and 0.97, meaning that the probability that confidence intervals produced by the estimation procedure contain the true parameter estimand is pretty high, indicative of reliable and accurate estimation. Standard errors for estimation coverage of all estimands are at a pretty low level of around 0.01. The estimators showed similar performance for both types of political participation and for all political entities\footnote{The results for unconventional type of political participation and for countries and region other than Japan are not listed here.}.
+
+<<echo=FALSE, results=tex>>=
+library(DeclareDesign)
+library(stargazer)
+mediation_analysis_designer <- function(a, b, c, g, rho){
+  N <- 100
+  population <- declare_population(N = N, e1 = rnorm(N), e2 = rnorm(n = N,  mean = rho * e1, sd = sqrt(1 - rho^2)))
+  POs_M <- declare_potential_outcomes(M ~ 1 * (a * Z + e1 > 0))
+  POs_Y <- declare_potential_outcomes(Y ~ g * Z + b * M + c * M * Z + e2, conditions = list(M = 0:1, Z = 0:1))
+  POs_Y_nat_0 <- declare_potential_outcomes(Y_nat0_Z_0 = b * M_Z_0 + e2, Y_nat0_Z_1 = g + b * M_Z_0 + c * M_Z_0 + e2)
+  POs_Y_nat_1 <- declare_potential_outcomes(Y_nat1_Z_0 = b * M_Z_1 + e2, Y_nat1_Z_1 = g + b * M_Z_1 + c * M_Z_1 + e2)
+  estimands <- declare_inquiries(FirstStage = mean(M_Z_1 - M_Z_0), Indirect_0 = mean(Y_M_1_Z_0 - Y_M_0_Z_0), Indirect_1 = mean(Y_M_1_Z_1 - Y_M_0_Z_1), Controlled_Direct_0 = mean(Y_M_0_Z_1 - Y_M_0_Z_0), Controlled_Direct_1 = mean(Y_M_1_Z_1 - Y_M_1_Z_0), Natural_Direct_0 = mean(Y_nat0_Z_1 - Y_nat0_Z_0), Natural_Direct_1 = mean(Y_nat1_Z_1 - Y_nat1_Z_0))
+  assignment <- declare_assignment(Z = complete_ra(N, prob = 0.5), legacy = FALSE)
+  reveal_M <- declare_reveal(M, Z)
+  reveal_Y <- declare_reveal(Y, assignment_variable = c("M", "Z"))
+  reveal_nat0 <- declare_reveal(Y_nat0)
+  reveal_nat1 <- declare_reveal(Y_nat1)
+  manipulation <- declare_step(Not_M = 1 - M, handler = fabricate)
+  mediator_regression <- declare_estimator(M ~ Z, model = lm_robust, inquiry = "FirstStage", label = "Stage 1")
+  stage2_1 <- declare_estimator(Y ~ Z * M, model = lm_robust, term = c("M"), inquiry = c("Indirect_0"), label = "Stage 2")
+  stage2_2 <- declare_estimator(Y ~ Z * M, model = lm_robust, term = c("Z"), inquiry = c("Controlled_Direct_0", "Natural_Direct_0"), label = "Direct_0")
+  stage2_3 <- declare_estimator(Y ~ Z * Not_M, model = lm_robust, term = c("Z"), inquiry = c("Controlled_Direct_1", "Natural_Direct_1"), label = "Direct_1")
+  population + POs_M + POs_Y + POs_Y_nat_0 + POs_Y_nat_1 + estimands + assignment + 
+    reveal_M + reveal_Y + reveal_nat0 + reveal_nat1 + manipulation + 
+    mediator_regression + stage2_1 + stage2_2 + stage2_3 
+}
+
+mediat_m <- lm_robust(p_trust ~ V211, data = j_data)
+outcome_m <- lm_robust(Voting ~ V211 * p_trust, fixed_effects = j_fullmatch, data=j_data)
+
+designs <- expand_design(mediation_analysis_designer, a = 0.1820741, b = -0.02894976, c = 0.29855441, g = -0.8071611, rho = 0)
+diagnosis0 <- diagnose_design(designs, sims = 500)
+diag_df <- diagnosis0$diagnosands_df[, c("inquiry_label", "estimator_label", "bias", "se(bias)", "rmse", "se(rmse)", "coverage", "se(coverage)")]
+stargazer(diag_df, header=FALSE, summary=FALSE, title = "Estimation Diagnosis Statistics")
+@
+
+\section*{Preliminary Findings}
+As can be seen from the following table (V211 stands for national identity), it is much more likely that there is a true mediation effect of political trust on national identity's effect on voting at the national level, the effect size is 0.2986, a pretty big effect, and we can reject the null hypothesis of no mediation effect of political trust on national identity's effect on voting at the national level with fairly strong evidence, the p value is 0.0238, significantly lower than the conventional level of 0.05, meaning that the observed test statistic has very small probability of being within the null distribution of the test statistic, thus rejecting the null hypothesis with great confidence. And the corresponding confidence interval is (0.0398, 0.5573), which doesn't include the value 0, also indicating that we are pretty confident that there is a true mediation effect of political trust on national identity's effect on voting at the national level.
+
+On the other hand, for political trust's potential mediation effect on national identity's effect on unconventional political participation, even though the parameter estimate shows a value of -0.067, there is not enough evidence to reject the null hypothesis of no mediation effect of political trust on national identity's effect on unconventional political participation, the p value is 0.467, meaning that there is a very high chance that the null hypothesis is in fact true as the observed test statistic is very much in the middle of the null distribution of the test statistic. And correspondingly, the obtained confidence interval for political trust's potential mediation on national identity's effect on unconventional political participation is (-0.2492, 0.1146), which includes the value 0, also indicating that we have little evidence to reject the null hypothesis of no mediation effect.
+
+<<echo=FALSE, results=tex>>=
+library(xtable)
+library(tidyverse)
+
+model1 <- lm_robust(Voting ~ V211 * p_trust, fixed_effects = j_fullmatch, data=j_data)
+model2 <- lm_robust(pp ~ V211 * p_trust, fixed_effects = j_fullmatch, data=j_data)
+
+table1 <- model1 %>% tidy
+table2 <- model2 %>% tidy
+
+c_table <- rbind(table1, table2)
+
+c_table$outcome = ifelse(c_table$outcome %in% c("pp") , "Unconventional Participation", c_table$outcome)
+
+c_table <- subset (c_table, select = -statistic)
+xtable(c_table)
+@
+
+\newpage
+\begin{thebibliography}{9}
+\bibitem{alm}
+Almond, G. and Verba, S.
+\textit{The Civic Culture: Political Attitudes and Democracy in Five Nations}.
+Princeton: Princeton University Press. 1963.
+
+\bibitem{wrd}
+Araujo, Pedro.
+\textit{A new correction for controlling family-wise error rate in multiple comparison studies}.
+Accreditation and Quality Assurance. 2020, 25, 167-169.
+
+\bibitem{bar}
+Barnes, S. and Kaase, M. K.
+\textit{Political Action: Mass Participation in Five Western Democracies}.
+Beverly Hills: Sage Publications. 1979.
+
+\bibitem{Pav}
+Cichocka, Aleksandra; Gorska, Paulina; Jost, John T.; Sutton, Robbie M.; Bilewicz, Michal.
+\textit{What Inverted U Can Do for Your Country: A Curvilinear Relationship
+Between Confidence in the Social System and Political Engagement}.
+Journal of Personality and Soical Psychology. 2018, Vol. 115, No. 5.
+
+\bibitem{Han}
+De Rooij, Eline A.; Reeskens, Tim; Wright, Matthew.
+\textit{Does Pride in One's Nation Foster Participation? On the Causal Linkage between national identity and Political Engagement}.
+Working Paper, August 2011.
+
+\bibitem{Joh}
+Huddy, Leonie; Khatib, Nadia.
+\textit{American Patriotism, National Identity, and Political Involvement}. 
+American Journal of Political Science, January 2007, Vol. 51, No. 1.
+
+\bibitem{Boh}
+Lay, J. Celeste; Torney-Purta, Judith.
+\textit{Patriotism and Political Participation Among Russian and American Adolescents}.
+https://citeseerx.ist.psu.edu/, January 2007.
+
+\bibitem{lev}
+Levi, M. and Stoker, L.
+\textit{Political trust and trustworthiness}.
+Annual Review of Political Science. 2000, 3: 475-507.
+
+\bibitem{Ols}
+Olson, M. 1965.
+\textit{The Logic of Collective Action: Public Goods and the Theory of Groups}.
+Cambridge, MA:Harvard University Press. 1965.
+
+\bibitem{Whit}
+Whiteley, P.F. and Seyd.
+\textit{Rationality and Party Activism: Encompassing Tests of
+Alternative Models of Political Participation}.
+European Journal of Political Research. 1996, Vol. 29.
+
+\bibitem{wvs}
+World Values Survey.
+\textit{https://www.worldvaluessurvey.org/WVSDocumentationWV6.jsp}.
+
+\end{thebibliography}
+
+\newpage
+\section*{Appendix}
+\subsection*{List of Relevant Survey Items}
+\begin{lstlisting}[
+    basicstyle=\footnotesize
+]
+V227 Vote in elections: National level
+V85 Petition
+V86 Joining Boycotts
+V87 Peaceful Demonstrations
+V88 Joining Strikes
+V89 Any other act of Protests
+V211 How proud of nationality
+V84 Interest in Politics
+V29  Active/Inactive membership: Political party
+V28 Active/Inactive membership: Labor Union
+V25 Active/Inactive membership: Church or religious organization
+V30 Active/Inactive membership: Environmental organization
+V32 Active/Inactive membership: Humanitarian or charitable organization
+V34 Active/Inactive membership: Self-help group, mutual aid group
+V35 Active/Inactive membership: Other organization
+V116 Confidence: Political Parties
+V118 Confidence: The Civil service
+V115 Confidence: The government (in your nation's capital)
+V105 How much you trust: People you meet for the first time
+V248 Highest education level attained
+V191 In the last 12 month, how often have you or your family: Gone without a cash income
+V229 Employment Status
+V242 Age
+v240 Sex
+\end{lstlisting}
+
+\newpage
+\subsection*{Executed Code}
+Link for the Github Repository:
+\href{https://github.com/jingl8/PS_531_Final_JL}{Jing's Pre-Analysis Plan}
+
+\begin{lstlisting}[
+    basicstyle=\footnotesize
+]
+
+library(GGally)
+library(dplyr)
+
+mydata <- na.omit(read.csv("C:/Users/ali/Documents/R/ps590/519/PS519_data.csv"))
+
+fitdata <- subset(mydata, V211 == "2" | V211 == "3")
+
+fitdata$cpp <- rowMeans(fitdata[ , c("V85", "V88")], na.rm=TRUE)
+fitdata$ncpp <- rowMeans(fitdata[ , c("V86", "V87", "V89")], na.rm=TRUE)
+fitdata$pp <- rowMeans(fitdata[ , c("V85", "V88", "V86", "V87", "V89")], na.rm=TRUE)
+
+#fitdata$memship <- rowMeans(fitdata[ , c("V28", "V25", "V30", "V32", "V34", "V35")], na.rm=TRUE)
+
+fitdata$p_trust <- rowMeans(fitdata[ , c("V115", "V116", "V118")], na.rm=TRUE)
+
+fit_data <- fitdata[, c("C_COW_ALPHA", "V211", "cpp", "ncpp", "pp", "p_trust", "V227", "V116", "V84",
+"V242", "V240", "V229", "V29", "V191", "V248", "V115", "V105", "V118")]
+
+work_data <- subset(fit_data, V248 != 1 & V229 != 8 & V242 <= 80)
+
+work_data$V29 = ifelse(work_data$V29 %in% c(0) , 2, 
+              ifelse(work_data$V29 %in% c(2), 0, work_data$V29))
+
+work_data$V211 = ifelse(work_data$V211 %in% c(2) , 0, 1)
+
+work_data <- work_data %>% 
+  rename(
+    Voting = V227,
+    E_Status = V229,
+    Education = V248,
+    Age = V242
+    )
+
+brics <- c("EST", "HKG", "JPN")
+bricsdata <- subset(work_data, C_COW_ALPHA %in% brics, 
+select=c(Voting, E_Status, Education, C_COW_ALPHA))
+bricsdata$C_COW_ALPHA <- factor(bricsdata$C_COW_ALPHA)
+ggpairs(bricsdata, columns = 1:3, ggplot2::aes(colour=C_COW_ALPHA), 
+title = ("Figure 1: Pairwise Correlation Between The Variables"), cardinality_threshold = 72)
+
+library("optmatch")
+library("RItools")
+fullmatch <- fullmatch(V211 ~ Age + E_Status +  Education, data = work_data)
+myb <- xBalance(V211 ~ Age + E_Status +  Education + strata(fullmatch), data=work_data, 
+report = c("adj.means", "std.diffs", "z.scores", "chisquare.test"))
+plot(myb, main = "Covariates adjustment balance test")
+
+library("stargazer")
+library("lme4")
+library("estimatr")
+library("randomizr")
+#t(work_data %>%
+#  summarise_all(funs(sum(is.na(.)))))
+
+#work_data$country <- ifelse(work_data$C_COW_ALPHA %in% c("BRA") , 1,
+#              ifelse(work_data$C_COW_ALPHA %in% c("EST"), 2,
+#              ifelse(work_data$C_COW_ALPHA %in% c("HKG"), 3,
+#              ifelse(work_data$C_COW_ALPHA %in% c("JPN"), 4, 5
+#                     ))))
+
+j_data <- subset(work_data, C_COW_ALPHA == "JPN")
+j_fullmatch <- fullmatch(V211 ~ Age + E_Status +  Education, data = j_data)
+
+lmermodel <- lm_robust(Voting ~ V211 * p_trust, fixed_effects = j_fullmatch, data=j_data)
+obsTestStat1 <- unname(lmermodel$coefficients)[3]
+
+new_experiment <- function(){
+    reshuffled <- j_data 
+    reshuffled$V211 <- complete_ra(N = nrow(reshuffled))
+    lmer_m <- lm_robust(Voting ~ V211 * p_trust, fixed_effects = j_fullmatch, data=reshuffled)
+    unname(lmer_m$coefficients)[3]
+}    
+set.seed(20210501)
+simulated_coef <- unname(replicate(1000, new_experiment()))
+
+#mean(simulated_coef >= obsTestStat1)
+#2 * min(mean(simulated_coef >= obsTestStat1), mean(simulated_coef <= obsTestStat1))
+
+## plot the distributions that represent the null hypothesis 
+## and the observed values for the test statistics.
+plot(density(simulated_coef), xlim = range(simulated_coef), 
+main = "Hypothesis Testing on the Mediation of Political Trust")
+rug(simulated_coef, line = -1, lwd = 2)
+#lines(density(simulated_coef), lty = 2)
+abline(v = obsTestStat1)
+
+#aov_model1 <- aov(Voting ~ V211 * p_trust, data=j_data)
+#summary(aov_model1)
+
+library(foreach)
+library(doParallel)
+cl <- makeCluster(2) ## 4 cores
+registerDoParallel(cl)
+
+fprfn <- function(simulations, outcome, mediation, fixed_eff) {
+  outpaired <- outcome - median(outcome)
+  N <- nrow(j_data)
+  output <- foreach(1:simulations,
+    .packages = "randomizr",
+    .export = c("lm_robust"),
+    .combine = "c"
+  ) %dopar% {
+    newz <- complete_ra(N)
+    newzpaired <- newz - median(newz)
+    sim_p <- summary(lm_robust(outpaired ~ newzpaired * mediation, 
+    fixed_effects = fixed_eff))$coeff[3,4]
+    return(sim_p)
+  }
+  return(output)
+}
+
+set.seed(531)
+results2a <- fprfn(100, outcome = j_data$Voting, mediation = j_data$p_trust, fixed_eff = j_fullmatch)
+
+#mean(results2a < .05)
+
+powerfunc <- function(simulations, outcome, mediation, fixed_eff) {
+  N <- nrow(j_data)
+  output <- foreach(1:simulations,
+    .packages = "randomizr",
+    .export = c("lm_robust"),
+    .combine = "c"
+  ) %dopar% {
+    newz <- complete_ra(N)
+    newoutcome <- newz * (-0.8071611) + mediation * (-0.02894976) + newz * mediation * (0.29855441) 
+    #newzpaired <- newz - mean(newz)
+    #newoutcome <- outcome - newz * mediation  * effect
+    #newoutcomePaired <- newoutcome - mean(outcome)
+    sim_p <- summary(lm_robust(newoutcome ~ newz * mediation, 
+    fixed_effects = fixed_eff))$coefficients[3, 4]
+    return(sim_p)
+  }
+  return(output)
+}
+
+#sizes <-seq(0.25, 0.45, 0.025)
+set.seed(531)
+res <- powerfunc(100, outcome = j_data$Voting, mediation = j_data$p_trust, fixed_eff = j_fullmatch)
+mean(res < .05)
+
+library(DeclareDesign)
+library(stargazer)
+mediation_analysis_designer <- function(a, b, c, g, rho){
+  N <- 100
+  population <- declare_population(N = N, e1 = rnorm(N), e2 = rnorm(n = N,  
+  mean = rho * e1, sd = sqrt(1 - rho^2)))
+  POs_M <- declare_potential_outcomes(M ~ 1 * (a * Z + e1 > 0))
+  POs_Y <- declare_potential_outcomes(Y ~ g * Z + b * M + c * M * Z + e2, 
+  conditions = list(M = 0:1, Z = 0:1))
+  POs_Y_nat_0 <- declare_potential_outcomes(Y_nat0_Z_0 = b * M_Z_0 + e2, 
+  Y_nat0_Z_1 = g + b * M_Z_0 + c * M_Z_0 + e2)
+  POs_Y_nat_1 <- declare_potential_outcomes(Y_nat1_Z_0 = b * M_Z_1 + e2, 
+  Y_nat1_Z_1 = g + b * M_Z_1 + c * M_Z_1 + e2)
+  estimands <- declare_inquiries(FirstStage = mean(M_Z_1 - M_Z_0), 
+  Indirect_0 = mean(Y_M_1_Z_0 - Y_M_0_Z_0), 
+  Indirect_1 = mean(Y_M_1_Z_1 - Y_M_0_Z_1), 
+  Controlled_Direct_0 = mean(Y_M_0_Z_1 - Y_M_0_Z_0), 
+  Controlled_Direct_1 = mean(Y_M_1_Z_1 - Y_M_1_Z_0), Natural_Direct_0 = mean(Y_nat0_Z_1 - Y_nat0_Z_0), Natural_Direct_1 = mean(Y_nat1_Z_1 - Y_nat1_Z_0))
+  assignment <- declare_assignment(Z = complete_ra(N, prob = 0.5), legacy = FALSE)
+  reveal_M <- declare_reveal(M, Z)
+  reveal_Y <- declare_reveal(Y, assignment_variable = c("M", "Z"))
+  reveal_nat0 <- declare_reveal(Y_nat0)
+  reveal_nat1 <- declare_reveal(Y_nat1)
+  manipulation <- declare_step(Not_M = 1 - M, handler = fabricate)
+  mediator_regression <- declare_estimator(M ~ Z, model = lm_robust, 
+  inquiry = "FirstStage", label = "Stage 1")
+  stage2_1 <- declare_estimator(Y ~ Z * M, model = lm_robust, 
+  term = c("M"), inquiry = c("Indirect_0"), label = "Stage 2")
+  stage2_2 <- declare_estimator(Y ~ Z * M, model = lm_robust, 
+  term = c("Z"), inquiry = c("Controlled_Direct_0", "Natural_Direct_0"), 
+  label = "Direct_0")
+  stage2_3 <- declare_estimator(Y ~ Z * Not_M, model = lm_robust, term = c("Z"), inquiry = c("Controlled_Direct_1", "Natural_Direct_1"), label = "Direct_1")
+  population + POs_M + POs_Y + POs_Y_nat_0 + POs_Y_nat_1 + estimands 
+  + assignment + reveal_M + reveal_Y + reveal_nat0 + reveal_nat1 
+  + manipulation + mediator_regression + stage2_1 + stage2_2 + stage2_3 
+}
+
+mediat_m <- lm_robust(p_trust ~ V211, data = j_data)
+outcome_m <- lm_robust(Voting ~ V211 * p_trust, fixed_effects = j_fullmatch, data=j_data)
+
+designs <- expand_design(mediation_analysis_designer, a = 0.1820741, 
+b = -0.02894976, c = 0.29855441, g = -0.8071611, rho = 0)
+diagnosis0 <- diagnose_design(designs, sims = 500)
+diag_df <- diagnosis0$diagnosands_df[, c("inquiry_label", "estimator_label", 
+"bias", "se(bias)", "rmse", "se(rmse)", "coverage", "se(coverage)")]
+stargazer(diag_df, header=FALSE, summary=FALSE, title = "Estimation Diagnosis Statistics")
+
+\end{lstlisting}
+\end{document}
