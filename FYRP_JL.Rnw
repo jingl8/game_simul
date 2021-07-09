@@ -1,0 +1,607 @@
+% First Year Research Paper
+
+% Created by Jing Li, May 2021
+
+\documentclass{article}
+\DeclareMathSizes{12}{30}{16}{12}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{amsmath}
+\renewcommand{\thesection}{\Roman{section}}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{ {./} }
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+\begin{singlespace}
+\title{National Identity and Political Participation}
+\author{Jing Li}
+\date{}
+\maketitle
+
+\begin{abstract}
+This paper examines national identity's effects on both conventional and unconventional political participation across a number of countries. Previous research has provided mixed results regarding the effect of national identity on conventional and unconventional political participation in the cases of one or two countries. Here we offer a cross-national analysis of the effects of national identity on voting at the national level and unconventional political participation, and examine cross-level effects of democracy and liberty on political participation. Leveraging the representative World Values Survey data and IDEA GSoD Indices, the results from several multilevel models provide evidence for the cross-national heterogeneity of the effects of national identity and its interaction with democracy and liberty on conventional as well as unconventional political participation.     
+\end{abstract}
+\end{singlespace}
+
+\doublespacing
+\vspace{.2in}
+"National identity has been pivotal to the fortunes of modern states". That's what Francis Fukuyama said when he argued that national identity still matters (Fukuyama, 2018). To echo him, national identity is one of the essential and most important forms of political identity for citizens across the world while nation state is the most fundamental form of political entity in today's world. Yet while we know much about interstate relationships between nations, until now very little is known about the importance of individuals' national identity in domestic political life, and specifically how might national identity be encouraging or discouraging political participation in different national circumstances. Existing knowledge maintains that national identity encourages conventional form of political participation, for example voting at the national level, but discourages unconventional form of political participation, for example protests and petitions. However, we have so far know very little about how this relationship manifests in cross-national settings, and more specifically how do national identity's effects on conventional and unconventional political participation manifest under different country level conditions. This paper aims to expand our current understanding on this topic by studying the national identity's effects on political participation across a wide range of countries in the world.
+
+Previous beliefs about the relationship between national identity and political participation rest on an assumption that there are not much cross-national differences in how national identity might impact political participation. However this assumption cannot be readily taken for granted. While national identity is being held by individual citizens, to have any impact on their political participation, it has to operate in a national political setting. And this national setting is likely to be different across different countries. More specifically, a country's level of democracy, for example how representative the national government is, is likely to render national identity's impact on conventional political participation differently across countries. Citizens with a strong national identity in a country with a representative government is likely to vote more in national elections than citizens living in a country with a non-representative government. Meanwhile a country's level of liberty, for example how much freedom of expression, association and assembly there are in a country, is likely to affect national identity's negative effect on unconventional political participation. Citizens with a strong national identity in a country with high freedom of expression, association and assembly is likely to participate more in unconventional political activities than similar profiled citizens in a country with less freedom of expression, association and assembly. The democracy level and liberty level and associated liberal democratic factors divide the world into different regions of countries, and national identity's effect on political participation is likely to be different in these different regions of countries.
+
+Knowing how national identity might contribute or discourage political participation in what types of systematic political conditions is likely to provide valuable information and guidance on how best to stimulate individuals' political participation through both democratic system building and individual level national identity. History has offered us the bad lessons from the irrational patriotism-induced manic political participation in post-World War I Germany, where the resulting rise of Hitler caused dire political and human disaster thereafter. However, rational and sensible national identity-induced political participation and civic engagement ought to greatly contribute to the democratic and civic life in a society. Having the knowledge of what national political environment is conducive to national identity's positive effect on political participation and what national political environment can counter-balance national identity's negative effect on political participation will not only inform government and social organizations on which type of political system and environment to construct, but offer actional advice on how best to leverage citizens' national identity and sentiment to motivate individual political participation and create more engaging civic and democratic life\footnote{Patriotism and national identity are different, and this study focuses solely on national identity, and we leave patriotism for another subsequent study.}.
+
+Making use of the World Values Survey (WVS) data on individuals' level of identification with the nation, conventional and unconventional political participation, and background characteristics, and the Global State of Democracy (GSoD) Indices data on country-specific democracy and liberty levels, we are able to show that national identity is likely to have a very different effect on both conventional and unconventional political participation across countries of different democracy and liberty level and across different cultural regions. The previous conclusion of national identity's divergent effects on conventional and unconventional political participation is only able to be held in advanced liberal democratic countries while in other regions of the world, the story is much more complicated. The WVS and GSoD Indices respectively provide authoritative and credible individual level and country level data. Under the backdrop of increasing globalization, analyzing national identity's impact on political participation in a cross-national settings is likely to enlighten us on how national identity still matters in domestic political in cross-national settings.
+
+The article proceeds as follows. First, we briefly review existing empirical and theoretical work on national identity's effects on political participation and locate this study with respect to it. Then we discuss the data, methods, and results of our analysis. And we conclude with discussion of main findings and limitations of this study and suggestions for future research.
+
+\vspace{.2in}
+\section*{Literature Review}
+Surprisingly there hasn't been that many studies on national identity's impact on political participation. Huddy and Khatib analyze the different forms and measurements of national attachment and demonstrate that national identity is the only measure of national attachment to predict political interest and voter turnout in adult and student samples, and provide evidence that a strong American identity promotes civic involvement (Huddy and Khatib, 2007). Lay and Purta examine patriotism and political participation among Russian and American adolescents and find that students with more pride in their country are more likely to participate in conventional politics but less likely to participate in protests and unconventional forms of political activities (Lay and Purta, 2007). 
+
+Rooij, Reeskens and Wright explore the potential mediating effects of both group solidarity and trust on national identity's effects on political participation. They do find a mediating effect of group solidarity and trust, and additionally find that how proud people are of their country is positively related to their tendency to vote but is negatively related to their tendency to participate in unconventional political activities. However, they do not find any significant impact of political interest and satisfaction with democracy on the relationship between national identity and political participation (Rooij, Reeskens and Wright, 2011). 
+
+Mader, Pesthy, and Schoen differentiate between civic and ethnocultural conceptions of national identity and examine their association with voter turnout and two expressions of party preference, namely party identification and vote choice. Their case study of Germany in the 2015-2017 period shows that subscribing to the civic conception of national identity was associated with increased probability of voter turnout as well as preference for liberal democratic parties of the Federal Republic including CDU/CSU, SPD, FDP and Greens, while respondents subscribing to the ethnocultural dimension of national identity are more likely to prefer the AfD (Mader, Pesthy, and Schoen, 2020).
+
+Shenhav and co-authors explore individuals' embracing of national stories and how that relates to their participation in group political activities. A complete national story consists of the past, the future, and prominent national characters. Their results show that the likelihood of voting will be higher among people who have a strong connection with any kind of national stories, and even more so for people who espouse a complete national story. Furthermore, the greater the proximity between an individual's national story and the central stories in the respective country, the greater the likelihood that an individual will vote on election day (Shenhav, Sheafer, Zoizner, Hoof, Kleinnijenhuis, Kaplan, Hopmann, 2021). 
+
+Raney and Berdahl examine the relationships between citizenship norms, group identity, and political participation using data on West Canada. They find that while community duty is negatively related to voting, the interaction of duty to vote and community duty does increase turnout at the national level. Identity and norms matter for political participation in varying ways. Strong territorial identifiers are more likely to vote than those with weaker or no territorial identifications, while strong global identifiers are less likely to vote and more likely to engage in unconventional political activities than those with weaker or no global identifications (Raney and Berdahl, 2009).
+
+Meanwhile, studies on why people participate in protests and other types of unconventional political activities (petitions, strikes, boycotts, peaceful demonstrations, etc.) have presented a variety of reasons including grievances resulting from relative deprivation, frustration, or perceived injustice, efficacy, resources, and opportunities.  Increasingly, studies also show that the more people identify with a group, the more inclined they are to protest on behalf of that group (Klandermans et al., 2002). And this holds true for both low-status social groups and high-status social groups(Stekelenburg and Klandermans, 2013). In addition, immigrants who display a dual identity are more likely to take to the streets on behalf of their group (Simon and Ruhs, 2008). 
+
+However, national identity's effect on political participation has so far not examined in a cross-national setting and in different regions of the world, and correspondingly we are lacking an understanding of country-specific political and ethnocultural factors' effects on national identity's effect on political participation. This study aims to fill this gap by studying national identity's effects on both conventional and unconventional political participation across 47 countries in Europe, North and Latin Americas, Southern Africa, East Asia, and Oceania.
+
+\vspace{.2in}
+\section*{Theories and Hypotheses}
+What is national identity? According to the social identity theory, identity is defined as an awareness of one's objective membership in the group and a psychological sense of group attachment (Tajfel, 1981). And correspondingly, national identity is defined as a subjective or internalized sense of belonging to the nation (Huddy and Khatib, 2007). Huddy and Khatib also distinguish between national identity, symbolic patriotism, constructive patriotism, and uncritical patriotism, and show that national identity is the only one that promotes civic engagement (Huddy and Khatib, 2007). The difference between uncritical patriotism and national identity here could be argued to largely resemble the difference between ethnocultural and civic conceptions of national identity proposed by Mader, Pesthy, and Schoen. And national identity promotes civic engagement while the more ethnocultural patriotism does not.
+
+National identity has been shown to be able to help overcome the collective action problem and stimulate individuals' participation in the nation's political life. And national identity remains the main source of democratic political legitimacy (Brubaker, 2004). The well-documented "paradox of participation" states that rational individuals lack an incentive to participate in politics. The reason is that they cannot see the immediate benefit of political participation while they suffer from certain cost associated with it. Individuals cannot visibly observe how their individual political participation is impacting the political outcomes, therefore making them likely to free ride on other people's efforts (Whiteley and Seyd, 1996). Relevant research also shows that group size inhibits provision of public goods, that is it is more difficult for larger-size group to overcome the dilemma of collective action. And coercion and material incentives are likely to be less effective as the group size gets bigger especially when the group size reaches the national level. Mancur Olson has also argued that, the problem of collective action can only be overcome in small groups or when coercion or material incentives can be applied (Olson, 1965).
+
+Both the social identity theory and the social categorization theory suggest that a strong sense of national identity is associated with a higher level of political participation. The social identity theory states that being part of a group motivates individuals to differentiate in-group and out-group members and associate positive values with the group they belong to even if members in the group are anonymous and don't have face-to-face interactions, that is "A group can exist simply because it is imagined to exist"(Tajfel and Turner 1979: 40, quoted in Hogg and Turner 1985: 52). And nations are groups of people who share a common "we-feeling" and a sense of mutual belonging and obligation. Therefore, individuals with a strong sense of national identity will think of themselves as sharing membership in and identification with the nation, feel a strong attachment to the nation, more likely to feel solidarity with members of the same national group, trust them more, and participate more in group's political activities (Brewer and Kramer, 1986). 
+
+Social identity theory also suggests that individuals participate in unconventional types of political activities because they identify with the group, that is people join in protests not so much because of the potential outcomes associated with the activities but because they identify with participants in the protests. In this context, group identification changes the focus from what an individual "I" want to what a group "We" want. And participation in these activities is seen as a way to show what "we" stand for and who "we" are, and individuals experience commitment and solidarity with other members of the group in these group activities. Group identification thus is seen as a powerful reason why individuals participate in protests and other related unconventional political activities (Ellemers, Spears, and Doosje, 1999). 
+
+The social categorization theory is related to the social identity theory but differs in scope. It states that when individuals' social identity becomes salient, they will depersonalize themselves, essentially "subjective stereotyping the self in terms of the relevant social categorization" and it is the cognitive basis of group behavior (Turner, 2006). And individuals with a strong national identity are more likely to adhere to the (prescriptive) norms of being a good citizen and thus participate more in acts of civic engagement (Huddy and Khatib, 2007). Research confirms that such a norm as associated with being citizen of a nation exists and it stimulates individual civic engagement in real political life. 
+
+While social identity theory and social categorization theory both lay out powerful arguments on how might national identity influence political participation, however, the hidden and untested assumption is that this influence can exist irrespective of the strength of the national government, the strength and representativeness of the political institutions, and the characteristics of the national ethnocultural background. This is a quite tenuous assumption and it's unlikely to withstand both theoretical examination and empirical evidence. The basic truth is that national identity's effects on political participation could very much depend on what type of nation an individual is identifying with and the characteristics the nation has. A well-functioning and representative national political system and an open and liberal national political environment not only makes it easier for individuals to engage in political activities but also enhances the legitimacy of the political system, therefore making it more likely for individuals to participate in the nation's political life in either conventional or unconventional type of activities. Whilst an unrepresentative national political system with very little freedom of expression, association, and assembly will likely reduce individuals' confidence in the political institutions and the national government, diminish their sense of national identity, and push them away from political participation of both types.
+
+Meanwhile, it is reasonable to expect that in countries with similar liberal democratic characteristics, the country level influence would function similarly across these countries for national identity's effects on political participation. 
+These countries of similar liberal democratic features can be said to constitute a region or cluster of countries with intra-region country differences small and inter-region country differences big in state of democracy. And countries within a cluster or region doesn't necessarily belong to a same geographic region. The effects of national identity on both types of political participation are likely to manifest similarly across countries in a same region, while these effects are likely to manifest differently across different regions of countries. Therefore, to account for the cross-national differences in national identity's effects on political participation and also examine the cross-national similarities in national identity's effects within a region of countries, we make the following two hypotheses:
+\newline   \textbf{H1}: National identity's effects on political participation are different across different countries.
+\newline   \textbf{H2}: National identity's effects on political participation have similarities across countries of the same region.
+\newline That is there will be both cross-national differences and similarities in national identity's effects on political participation depending on whether the countries are in the same region or not.
+
+\vspace{.2in}
+\section*{Data and Methods}
+To measure individuals' different forms of political participation, national identity, and other relevant characteristics, we leverage the World Values Survey data. The World Values Survey is a representative comparative social survey conducted globally every 5 years. It is one of the most authoritative and widely-used cross-national surveys in the social sciences. The specific data we will be using are Wave 6 data covering the time period from 2010 to 2016. The actual data have record for years 2010, 2011, 2012, 2013, 2014, and 2016. As 97 percent of the data we are using are within the time periods of 2010 to 2014 and further 83.2 percent of the data are within the consecutive three years of 2011 and 2013, we make the assumption that the temporal variations in the data for all the variables we are interested in are small enough such that our analysis results won't be biased even if we don't consider them, that is we are assuming that the year-over-year differences can be ignored here. Therefore we won't make statistical adjustments for year-over-year differences in this study. 
+
+As mentioned above, we measure conventional type of political participation with individuals' voting behavior at the national level, and we measure unconventional type of political participation with individuals' participation in petitions, boycotts, strikes, peaceful demonstrations, and any other acts of protest. We average individuals' participation across these five different unconventional political activities and create a composite score to denote individuals' overall level of unconventional political participation. For country's levels of democracy and liberty, we will be using the International Institute for Democracy and Electoral Assistance (International IDEA)'s Global State of Democracy Indices (GSoD Indices). We use representative government as a key indicator of democracy level and it has four subattributes: clean elections, inclusive suffrage, free political parties, and elected government. The democracy level index combines a total of 11 indicators of these four subattributes to construct an overall score for each country and each year over the time period covered in this study. The country-level liberty level or fundamental rights measure combines three subattributes: access to justice, civil rights, and social rights and equality to represent country-level liberty which is potentially most important for national identity's effect on unconventional form of political participation (International IDEA, 2019).
+
+We need to consider several potential individual-level confounding variables that are likely to have an impact on national identity's effects on conventional and unconventional political participation. The main factors we consider here are age, gender, highest level of education attained, and employment status. Bivariate exploratory data analysis indicate that both the national identity and political participation levels are not substantially different between male and female, therefore we decide not to perform covariate adjustment for gender. The other three variables are all found to have significant potential impact on both subjects' national identity and their political participation levels. As can be seen in the following Figure 1, the correlation coefficients indicate that both age and education level are highly correlated with national identity especially for German and Japanese individuals, meaning that these two variables are likely to have an impact on national identity's effects on political participation. Also individuals of different age groups show different levels of political participation, those individuals aged 80 or above participate much less compared with individuals of other age groups. Individuals having different levels of education show different levels of political participation, individuals having higher level of education also exhibit higher level of political participation. And individuals working full time or retired show much higher levels of political participation than individuals of other employment statuses. We would apply statistical adjustments for these covariate variables in subsequent analysis steps.
+
+<<fig=TRUE, echo=FALSE>>=
+library(GGally)
+library(dplyr)
+library(reshape)
+
+mydata <- read.csv("C:/Users/ali/Documents/R/ps590/519/PS519_data.csv")
+
+#cid_data <- na.omit(read.csv("C:/Users/ali/Documents/R/ps590/519/crdata.csv"))
+#fileEncoding="UTF-8-BOM"
+
+fitdata <- subset(mydata, V211 != "5")
+
+# test <- as.data.frame(table(fitdata[, c("C_COW_ALPHA", "V211")]))
+# 
+# test1 <- cast(test, C_COW_ALPHA ~ V211)
+# 
+# colnames(test1) <- c("C_COW_ALPHA", "VeryStrong", "Strong", "Weak", "VeryWeak")
+# 
+# test1$sum1 <- test1$VeryStrong + test1$Strong
+# test1$sum2 <- test1$Weak + test1$VeryWeak
+# test1$prop <- test1$sum1 / test1$sum2
+# 
+# countries <- test1[order(test1$prop), ][1:29, "C_COW_ALPHA"]
+# fitdata <- subset(fitdata, C_COW_ALPHA %in% countries)
+
+fitdata$cpp <- rowMeans(fitdata[ , c("V85", "V88")], na.rm=TRUE)
+fitdata$ncpp <- rowMeans(fitdata[ , c("V86", "V87", "V89")], na.rm=TRUE)
+fitdata$pp <- rowMeans(fitdata[ , c("V85", "V88", "V86", "V87", "V89")], na.rm=TRUE)
+
+fitdata$p_trust <- rowMeans(fitdata[ , c("V115", "V116", "V118")], na.rm=TRUE)
+
+fit_data <- fitdata[, c("C_COW_ALPHA", "V211", "pp", "p_trust", "V227", "V116", "V84","V242", "V240", "V229", "V29", "V191", "V248", "V115", "V105", "V118", "V133", "V262", "V214")]
+
+work_data <- na.omit(subset(fit_data, V248 != 1 & V229 != 8 & V242 <= 80))
+# work_data$V211 = ifelse(work_data$V211 %in% c(1) , -1.5,
+#               ifelse(work_data$V211 %in% c(2), -0.5,
+#               ifelse(work_data$V211 %in% c(3), 0.5, 1.5)))
+# work_data$V227 = ifelse(work_data$V211 %in% c(1) , 0,
+#               ifelse(work_data$V211 %in% c(2), 1,2))
+#work_data$V211 = ifelse(work_data$V211 %in% c(3,4) , 0, 1)
+
+names(work_data)[names(work_data) == "V227"] <- "National_Voting"
+names(work_data)[names(work_data) == "V229"] <- "Employment"
+names(work_data)[names(work_data) == "V248"] <- "Education"
+names(work_data)[names(work_data) == "V242"] <- "Age"
+names(work_data)[names(work_data) == "V211"] <- "National_Identity"
+#work_data$National_Identity <- rowMeans(work_data[ , c("V211", "V214")], na.rm=TRUE)
+
+brics <- c("EST", "GMY", "JPN")
+bricsdata <- subset(work_data, C_COW_ALPHA %in% brics, select=c(National_Identity, Age, Education, C_COW_ALPHA))
+bricsdata$C_COW_ALPHA <- factor(bricsdata$C_COW_ALPHA)
+ggpairs(bricsdata, columns = 1:3, ggplot2::aes(colour=C_COW_ALPHA), title = ("Figure 1: Pairwise Correlation Between the Variables"), cardinality_threshold = 72)
+@
+
+Combining the World Values Survey Wave 6 data with the IDEA Global State of Democracy Indices data for the same countries in the same time period, we have 48 countries available for our analysis of national identity's effects on political participation in different countries. However, as mentioned above, it is expected that not only will national identity has different effects on political participation across different countries, also in countries with similar state of democracy, the relationships between national identity and political participation will also be similar. Therefore, we decide to perform cluster analysis on the 48 countries based on the whole set of IDEA State of Democracy indices (representative government, fundamental rights, checks on government, impartial administration, participatory engagement). As shown in the following Cluster plot, we have identified 5 clusters of countries based on their state of democracy. However, because the second cluster consists of only two countries, Uruguay and Slovenia, we decide to focus our analysis on the other four clusters that have substantial number of countries. And we carry out our analysis on each cluster of countries separately.
+
+<<fig=TRUE, echo=FALSE>>=
+library(tidyverse)
+library(cluster)
+library(factoextra)
+
+gsodi_data <- read.csv("C:/Users/ali/Documents/R/ps590/519/agg_gso.csv")
+
+row.names(gsodi_data) <- gsodi_data$ID_country_name
+
+gsodi_df = subset(gsodi_data, select = -c(ID_country_name) )
+
+gsodi_df <- scale(gsodi_df)
+
+set.seed(123)
+k5 <- kmeans(gsodi_df, centers = 5, nstart = 25)
+fviz_cluster(k5, data = gsodi_df, main = "Figure 2: Clustering of Countries on IDEA Democracy Indices")
+
+#head(df)
+
+#distance <- get_dist(df)
+#fviz_dist(distance, gradient = list(low = "#00AFBB", mid = "white", high = "#FC4E07"))
+
+# k4 <- kmeans(df, centers = 4, nstart = 25)
+# str(k4)
+# 
+# fviz_cluster(k4, data = df)
+# 
+# set.seed(123)
+# 
+# fviz_nbclust(df, kmeans, method = "wss")
+# 
+# fviz_nbclust(df, kmeans, method = "silhouette")
+# set.seed(123)
+# gap_stat <- clusGap(df, FUN = kmeans, nstart = 25,
+#                     K.max = 10, B = 50)
+# # Print the result
+# print(gap_stat, method = "firstmax")
+# fviz_gap_stat(gap_stat)
+
+#unique(cid_data$ccode)[!(unique(cid_data$ccode) %in% unique(my_data$ccode))]
+
+# v_list <- c("v_54_02", "v_53_01", "v_52_01", "C_SD54", "C_SD53", "C_SD51", "C_A4", "C_A3", "C_A2", "C_A1", "ID_country_year", "ID_country_name", "ID_country_code", "ID_year")
+# gsodi_data <- subset(gsodi[v_list], ID_country_name %in% clist & ID_year %in% unique(my_data$Year))
+
+# sigma1 <- matrix(c(1,0.5,0.5,1),2,2)
+# sigma2 <- matrix(c(1.5,-0.7,-0.7,1.5),2,2)
+# sigma <- Matrix::bdiag(sigma1, sigma2, diag(6))
+
+#write.csv(gsodi_data,"gsodi_data.csv", row.names = FALSE)
+@
+
+As we expect national identity's effect on both conventional and unconventional political participation to vary across different countries, in other words, individual level observations are not independent, rather individuals will show more similar political participation patterns within a country than across different countries, a multilevel design with an individual level and a country level seems appropriate here. And to assess the effects of democracy level and liberty level, we would add them as cross-level interaction terms (with national identity) in multilevel models. Additionally, although ANOVA tests reveal that adding the random slope of national identity increases the model fit to the data, it is also likely to over-fit on the data we have, therefore, we decide not to add the random slope of national identity to each of the models we fit here. Instead we only assume an overall country-level random effect.The modeling results for the four different clusters of countries are presented in the tables below.
+
+To account for possible alternative explanations or hypotheses, for example the notion that the cost of political participation might play an important role in explaining whether individuals participate more in either conventional or unconventional types of political activities, we create separate terms for costly type and less costly type of political participation, and then regress both types separately on national identity, as we didn't find substantial difference in the respective effect of national identity on costly and less costly types of political participation, we are able to rule out the alternative explanation (results not shown here).
+
+<<results=tex, echo=FALSE>>=
+library(stargazer)
+library(ggplot2)
+#library("optmatch")
+#library("RItools")
+#library("estimatr")
+#lm_robust(V227 ~ V211 + V116 + V84, work_data)
+library(lme4)
+#library(lmerTest)
+#library(sjPlot)
+library(dplyr)
+
+ccodes <- na.omit(read.csv("C:/Users/ali/Documents/R/ps590/519/ccodes.csv"))
+c_data <- na.omit(merge(gsodi_data, ccodes, by=c("ID_country_name")))
+c_data <- c_data %>%
+ mutate(Cluster = k5$cluster)
+c_data <- subset(c_data[c("ID_country_name", "ccode", "Cluster")])
+gsodi <- na.omit(read.csv("C:/Users/ali/Documents/R/ps590/519/gsodi_data.csv"))
+cty_data <- na.omit(merge(gsodi, c_data, by=c("ID_country_name")))
+
+names(work_data)[names(work_data) == "C_COW_ALPHA"] <- "ccode"
+names(work_data)[names(work_data) == "V262"] <- "Year"
+
+names(cty_data)[names(cty_data) == "ID_year"] <- "Year"
+my_data <- na.omit(merge(work_data, cty_data, by=c("ccode", "Year")))
+
+my_data <- my_data %>% 
+  dplyr::rename(
+    Country = ccode,
+    Unconventional_participation = pp,
+    Democracy = C_A1,
+    Liberty = C_A2
+    )
+
+# latinAmerica <- subset(my_data, region %in% c("Central America", "South America"))
+# SouthAfrica <- subset(my_data, region %in% c("East Africa", "Southern Africa", "West Africa"))
+# EastAsia <- subset(my_data, region %in% c("South-East Asia", "East Asia"))
+# EastEurope <- subset(my_data, region == "Eastern Europe")
+# WesternEurope <- subset(my_data, region %in% c("North/Western Europe", "Oceania", "North America"))
+
+Region1 <- subset(my_data, Cluster == 1)
+Region2 <- subset(my_data, Cluster == 3)
+Region3 <- subset(my_data, Cluster == 4)
+Region4 <- subset(my_data, Cluster == 5)
+
+model1_green <- lmer(National_Voting ~ National_Identity * Democracy + (1 | Country) + Age + Employment + Education, REML=FALSE, data= Region2)
+model2_green <- lmer(Unconventional_participation ~ National_Identity*Liberty + (1 | Country)  + Age + Employment + Education, REML=FALSE, data=Region2)
+
+model1_orange <- lmer(National_Voting ~ National_Identity*Democracy  + (1 | Country) + Age + Employment + Education, REML=FALSE, data= Region1)
+model2_orange <- lmer(Unconventional_participation ~ National_Identity*Liberty + (1 | Country)  + Age + Employment + Education, REML=FALSE, data=Region1)
+
+model1_blue <- lmer(National_Voting ~ National_Identity*Democracy  + (1 | Country) + Age + Employment + Education, REML=FALSE, data= Region3)
+model2_blue <- lmer(Unconventional_participation ~ National_Identity*Liberty + (1 | Country)  + Age + Employment + Education, REML=FALSE, data=Region3)
+
+model1_brown <- lmer(National_Voting ~ National_Identity*Democracy  + (1 | Country) + Age + Employment + Education, REML=FALSE, data= Region4)
+model2_brown <- lmer(Unconventional_participation ~ National_Identity*Liberty + (1 | Country)  + Age + Employment + Education, REML=FALSE, data=Region4)
+
+#ranef(model2_green)$Country
+#ranef(model2_we)$Country
+#summary(model2_green)$coef
+#anova(model2_we)
+
+stargazer(model1_green, model2_green, header=FALSE,
+title = "Multilevel Models of National Identity on Political Participation (Green Region)", covariate.labels = c("National Identity", "Democracy Level", "Liberty Level", "Age", "Employment", "Education", "National Identity*Democracy Level", "National Identity*Liberty Level", "Intercept"),dep.var.labels = c("Conventional Participation", "Unconventional Participation"), ci = TRUE, keep.stat = c("adj.rsq","n"), digits = 2)
+
+stargazer(model1_orange, model2_orange, header=FALSE,
+title = "Multilevel Models of National Identity on Political Participation (Orange Region)", covariate.labels = c("National Identity", "Democracy Level", "Liberty Level", "Age", "Employment", "Education", "National Identity*Democracy Level", "National Identity*Liberty Level", "Intercept"),dep.var.labels = c("Conventional Participation", "Unconventional Participation"), ci = TRUE, keep.stat = c("adj.rsq","n"), digits = 2)
+
+stargazer(model1_blue, model2_blue, header=FALSE,
+title = "Multilevel Models of National Identity on Political Participation (Blue Region)", covariate.labels = c("National Identity", "Democracy Level", "Liberty Level", "Age", "Employment", "Education", "National Identity*Democracy Level", "National Identity*Liberty Level", "Intercept"),dep.var.labels = c("Conventional Participation", "Unconventional Participation"), ci = TRUE, keep.stat = c("adj.rsq","n"), digits = 2)
+
+stargazer(model1_brown, model2_brown, header=FALSE,
+title = "Multilevel Models of National Identity on Political Participation (Brown Region)", covariate.labels = c("National Identity", "Democracy Level", "Liberty Level", "Age", "Employment", "Education", "National Identity*Democracy Level", "National Identity*Liberty Level", "Intercept"),dep.var.labels = c("Conventional Participation", "Unconventional Participation"), ci = TRUE, keep.stat = c("adj.rsq","n"), digits = 2)
+
+#fullmatch <- fullmatch(V211 ~ Age + E_Status +  Education, data = my_data)
+
+#test <- lm_robust(Voting ~ rep_gov * V211, fixed_effects = fullmatch, clusters = C_COW_ALPHA, data = my_data)
+
+#test2 <- lm_robust(pp ~ liberties * V211, fixed_effects = fullmatch, clusters = C_COW_ALPHA, data = my_data)
+#p <- plot_model(model1_we, type = "re", facet.grid=FALSE) 
+#grid.arrange(p[[1]], p[[2]])
+
+#library(lattice)
+#p2 <- qqmath(ranef(model1_we, condVar=TRUE))
+#grid.arrange(p2[[1]], p2[[2]])
+
+# library(gridExtra)
+# (pp <- plot_model(model1_we,type="pred",
+#        terms=c("National_Identity","Country"),pred.type="re"))
+# (pp2 <- plot_model(model2_we,type="pred",
+#        terms=c("National_Identity","Country"),pred.type="re"))
+# grid.arrange(pp, pp2, ncol=2)
+# ggpredict(model1_we, terms = c("V211", "Voting"), type = "re") %>% 
+#    plot() +
+#    labs(x = "National Identity", y = "Voting", title = "Effect of national identity on Voting in countries") + theme_minimal()
+
+#qqnorm(resid(model1_we))
+#qqline(resid(model1_we))
+#confint(model1)
+
+# REsim(model1_we, n.sims = 500)
+# plotREsim(REsim(model1_we, n.sims = 500))
+# with(WesternEurope, interaction.plot(x.factor = National_Identity, trace.factor = ccode,
+#                                      response = National_Voting))
+@
+
+\vspace{.2in}
+\section*{Results}
+As can be seen in the following four tables of modeling results, from countries in the green cluster on the right to countries in the brown cluster on the left in the above cluster plot Figure 2, national identity and its interactions with country-level democracy and liberty have an increasingly decreasing statistically significant impact on both conventional and unconventional types of political participation. More specifically, for countries in the green cluster, both national identity and its interactions with democracy level and liberty level have a statistically significant impact on both conventional and unconventional types of political participation; for countries in the orange cluster, national identity's effect on unconventional political participation is significant while its effect on conventional political participation is very close to be statistically significant, and its interactions with democracy level and liberty level's effects on conventional and unconventional types of political participation are statistically significant respectively; for countries in the blue region, only national identity and its interaction with liberty level have a statistically significant effect on unconventional type of political participation; for countries in the brown region, only national identity has a statistically significant effect on conventional political participation. Also we can observe that the covariate variables age, education level attained, and employment status we consider here are almost always statistically significant for both types of political participation across all clusters of countries.
+
+And the directions of the effects of national identity and its interactions with 
+democracy level and liberty level vary across different clusters of countries. Specifically, for countries in the green region, national identity alone shows a positive effect on both conventional as well as unconventional types of political participation, while national identity's interactions with democracy level and liberty level both have a negative effect on conventional and unconventional types of political participation respectively, which is something worth further investigation. For countries in the orange region, national identity alone has a negative effect on both conventional and unconventional types of political participation, and national identity's interactions with democracy level and liberty level both have a positive effect on conventional and unconventional types of political participation respectively. For countries in the blue region, three of the effects discussed here are positive, the only negative effect is national identity's interaction with liberty level on unconventional form of political participation. For countries in the brown region, all four effects of national identity and its interaction terms are in the same directions as countries in the green region. 
+
+In terms of effect size, all the statistically significant effect sizes are not trivial, ranging from 0.14 in absolute value to 2.15 in absolute value. In most cases, the cross-level interaction term effect is bigger in effect size than national identity alone for a particular type of political participation. For example, in the green region of countries, the interaction term effects are both slightly bigger than the effects of national identity alone in absolute value, 1.2 over 1.17 and 0.26 over 0.18 on conventional and unconventional types of political participation respectively. For conventional type of political participation, that is voting at the national level, in close races, even small increases in turnout rate could have a large effect on the final election results. So the effects of national identity and those of its respective interaction terms with democracy level and liberty level on conventional and unconventional types of political participation we have found here are worthy of being taken seriously.
+
+The heterogeneity of national identity's effect on both conventional and unconventional political participation can also be observed in the following plots covering all four clusters of countries examined here.
+
+<<fig=TRUE, echo=FALSE>>=
+library(gridExtra)
+plot1 <- ggplot(Region2, aes(x = National_Identity, y = National_Voting, group = Country, col = Country)) + stat_summary(fun = mean, geom = "line") + coord_fixed()
+
+plot2<-ggplot(Region1,aes(x=National_Identity,y=National_Voting,group=Country,col=Country)) + stat_summary(fun=mean,geom="line")+coord_fixed()
+
+plot3<-ggplot(Region3,aes(x=National_Identity,y=National_Voting,group=Country,col=Country)) + stat_summary(fun=mean,geom="line")+coord_fixed()
+
+plot4<-ggplot(Region4,aes(x=National_Identity,y=National_Voting,group=Country,col=Country)) + stat_summary(fun=mean,geom="line")+coord_fixed()
+
+plot5<-ggplot(Region2,aes(x=National_Identity,y=Unconventional_participation,group=Country,col=Country)) + stat_summary(fun=mean,geom="line")+coord_fixed(ratio = 1.5)
+
+plot6<-ggplot(Region1,aes(x=National_Identity,y=Unconventional_participation,group=Country,col=Country)) + stat_summary(fun=mean,geom="line")+coord_fixed(ratio = 1.5)
+
+plot7<-ggplot(Region3,aes(x=National_Identity,y=Unconventional_participation,group=Country,col=Country)) + stat_summary(fun=mean,geom="line")+coord_fixed(ratio = 1.5)
+
+plot8<-ggplot(Region4,aes(x=National_Identity,y=Unconventional_participation,group=Country,col=Country)) + stat_summary(fun=mean,geom="line")+coord_fixed(ratio = 1.5)
+
+grid.arrange(plot1, plot5, plot2, plot6, ncol=2)
+@
+
+<<fig=TRUE, echo=FALSE>>=
+grid.arrange(plot3, plot7, plot4, plot8, ncol=2)
+
+# plotdata <- subset(my_data, region %in% c("Central America", "South America", "East Africa", "Southern Africa", "West Africa", "South-East Asia", "East Asia", "Eastern Europe", "North/Western Europe", "Oceania", "North America"))
+
+# ggplot(WesternEurope, aes(x = National_Identity, y = National_Voting, group = Country, col = Country)) + 
+#   geom_point() + stat_summary(fun = mean, geom = "line")
+# ggplot(WesternEurope, aes(x = National_Identity, y = National_Voting, group = Country, col = Country)) + 
+#   geom_point() + stat_summary(fun = mean, geom = "line")
+# ggplot(WesternEurope, aes(x = National_Identity, y = National_Voting, group = Country, col = Country)) + 
+#   geom_point() + stat_summary(fun = mean, geom = "line")
+# ggplot(WesternEurope, aes(x = National_Identity, y = National_Voting, group = Country, col = Country)) + 
+#   geom_point() + stat_summary(fun = mean, geom = "line")
+# ggplot(WesternEurope, aes(x = National_Identity, y = National_Voting, group = Country, col = Country)) + 
+#   geom_point() + stat_summary(fun = mean, geom = "line")
+
+@
+
+<<eval=false, echo=false>>=
+grid.arrange(plot2, plot7, ncol=2)
+multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+  library(grid)
+
+  # Make a list from the ... arguments and plotlist
+  plots <- c(list(...), plotlist)
+
+  numPlots = length(plots)
+
+  # If layout is NULL, then use 'cols' to determine layout
+  if (is.null(layout)) {
+    # Make the panel
+    # ncol: Number of columns of plots
+    # nrow: Number of rows needed, calculated from # of cols
+    layout <- matrix(seq(1, cols * ceiling(numPlots/cols)),
+                    ncol = cols, nrow = ceiling(numPlots/cols))
+  }
+
+ if (numPlots==1) {
+    print(plots[[1]])
+
+  } else {
+    # Set up the page
+    grid.newpage()
+    pushViewport(viewport(layout = grid.layout(nrow(layout), ncol(layout))))
+
+    # Make each plot, in the correct location
+    for (i in 1:numPlots) {
+      # Get the i,j matrix positions of the regions that contain this subplot
+      matchidx <- as.data.frame(which(layout == i, arr.ind = TRUE))
+
+      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
+                                      layout.pos.col = matchidx$col))
+    }
+  }
+}
+@
+
+<<eval=FALSE, echo=FALSE>>=
+set.seed(1234)  # this will allow you to exactly duplicate your result
+Ngroups = 100
+NperGroup = 3
+N = Ngroups * NperGroup
+groups = factor(rep(1:Ngroups, each = NperGroup))
+u = rnorm(Ngroups, sd = .5)
+e = rnorm(N, sd = .25)
+x = rnorm(N)
+y = 2 + .5 * x + u[groups] + e
+
+d = data.frame(x, y, groups)
+
+model = lmer(y ~ x + (1|groups), data=d)
+
+summary(model)
+
+confint(model)
+
+
+ggplot(aes(x, y), data=d) +
+  geom_point()
+
+re = ranef(model)$groups
+qplot(x = re, geom = 'density', xlim = c(-3, 3))
+
+df<-data.frame(Intercepts=randoms$ccode[,1],
+              sd.interc=2*sqrt(qq[,,1:length(qq)]),
+              lev.names=rownames(rand.interc))
+df$lev.names<-factor(df$lev.names,levels=df$lev.names[order(df$Intercepts)])
+
+p <- ggplot(df,aes(lev.names,Intercepts,shape=lev.names))
+
+#Added horizontal line at y=0, error bars to points and points with size two
+p <- p + geom_hline(yintercept=0) +geom_errorbar(aes(ymin=Intercepts-sd.interc, ymax=Intercepts+sd.interc), width=0,color="black") + geom_point(aes(size=2)) 
+
+#Removed legends and with scale_shape_manual point shapes set to 1 and 16
+p <- p + guides(size=FALSE,shape=FALSE) + scale_shape_manual(values=c(1,1,1,16,16,16))
+
+#Changed appearance of plot (black and white theme) and x and y axis labels
+p <- p + theme_bw() + xlab("Levels") + ylab("")
+
+#Final adjustments of plot
+p <- p + theme(axis.text.x=element_text(size=rel(1.2)),
+               axis.title.x=element_text(size=rel(1.3)),
+               axis.text.y=element_text(size=rel(1.2)),
+               panel.grid.minor=element_blank(),
+               panel.grid.major.x=element_blank())
+
+#To put levels on y axis you just need to use coord_flip()
+p <- p+ coord_flip()
+print(p)
+@
+
+\subsection*{Conclusion and Discussion}
+The results above largely resonate with our hypotheses about the heterogeneity of national identity's effects on both conventional as well as unconventional types of political participation across different countries. Moreover, it shows that national identity's effects on political participation is most significant for countries at the higher end of the spectrum of state of democracy indices.
+It also shows that the previous findings about national identity's divergent effects on conventional and unconventional types of political participation don't hold across the four different clusters of countries here. In fact, in all cases but one, national identity and its interaction terms with democracy level and liberty level's effects on both conventional and unconventional types of political participation are in the same direction, either both positive or both negative. The only exception is with the interactions terms' effects on political participation in the blue cluster of countries where national identity's interaction with democracy has a positive effect on conventional political participation while national identity's interaction with liberty has a statistically significant negative effect on unconventional political participation. In three of the four cluster of countries, national identity alone has positive effects on both types of political participation. The specific reasons why national identity has a positive effect on political participation in some countries and a negative effect on political participation in some other countries is a question we need to investigate more.
+
+The above results also reaffirm our belief that for national identity and its interaction with country-level factors to have significant effects on political participation, the state of democracy of the country individuals reside in plays a substantial role. This is not so hard to understand as the more liberal democratic countries simply provide more venues, channels and ways for individuals to engage in the domestic political life whilst in countries with low levels of democracy and freedom, it's much harder for individuals to participate in both conventional and unconventional political activities even when individuals have high national pride and strong identification with the nation. Countries with lowest levels of democracy and freedom will even often repress public political activities and collective actions. Therefore, to better channel and leverage individuals' attachment to and identification with the nation and create more engaging and participatory civil society, constructive system building of more representative government and more freedom for individuals is essential.
+
+Inevitably limitations exist with the study we have conducted here. The results we have obtained are based on one individual level data source and one country level data source, the WVS Wave 6 data and the GSoD Indices respectively. Even though these two data sources are quite representative and authoritative, measurement error almost always exists. And so we could have included a measurement error term in our models above. We also could have leveraged other data sources as well including the European Values Study, the AsiaBarometer and other regional surveys. There could also be alternative factors that can potentially impact national identity's effects on both conventional and unconventional types of political participation, for example, individual level social trust and social solidarity presumably will have an impact on national identity's effect on individuals' participation in unconventional political activities. That is the more social trust and social solidarity individuals have, the more likely they presumably will participate in group political activities including protests and demonstrations. Moreover, another possibility that we haven't considered in this study is the reverse relationship between national identity and political participation, that is the level of individuals' political participation could possibly enhance their sense of national identity, and we probably need to account for this potential two-way relationship between national identity and political participation in further study of the research question.
+
+Future research could continue to examine other factors that could account for the relationships between national identity and the two different forms of political participation. It could also be worthwhile to investigate patriotism's (mostly uncritical patriotism) relationship with political participation, especially the unconventional type of political participation, that is does individuals with more uncritical patriotism more likely to participate in unconventional type of political participation? National identity is a factor that is often overlooked when scholars look at the potential drivers of political participation, yet if utilized well and in the right political environment, it could be a quite powerful and reliable enhancer of civic engagement and democratic political participation of various kinds. 
+
+\newpage
+\begin{thebibliography}{9}
+
+\bibitem{Bre}
+Brewer, M.B. and Kramer, R.M.
+\textit{Choice Behavior in Social Dilemmas: Effects of Social Identity, Group Size, and Decision Framing}. 
+Journal of Personality and Social Psychology. 1986, 50: 543-549.
+
+\bibitem{Brus}
+Brubaker, R.
+\textit{In the Name of the Nation: Reflections on Nationalism and Patriotism}
+Citizenship Studies. 2004, 8(2): 115-127.
+
+\bibitem{Pav}
+Cichocka, Aleksandra; Gorska, Paulina; Jost, John T.; Sutton, Robbie M.; Bilewicz, Michal.
+\textit{What Inverted U Can Do for Your Country: A Curvilinear Relationship
+Between Confidence in the Social System and Political Engagement}.
+Journal of Personality and Soical Psychology. 2018, Vol. 115, No. 5.
+
+\bibitem{Dal}
+Dalton, R.J.
+\textit{Citizen Politics: Public Opinion and Political Parties in Advanced Industrial Democracies, 6th edn.}
+Thousand Oaks, CA: CQ Press. 2013.
+
+\bibitem{Han}
+De Rooij, Eline A.; Reeskens, Tim; Wright, Matthew.
+\textit{Does Pride in One's Nation Foster Participation? On the Causal Linkage between national identity and Political Engagement}.
+Working Paper, August 2011.
+
+\bibitem{Ell}
+Ellemers, N., R. Spears and B. Doosje (eds.)
+\textit{Social Identity: Context, commitment, content}.
+Blackwell, Oxford. 1999.
+
+\bibitem{Gel}
+Gelman, Andrew.
+\textit{You need 16 times the sample size to estimate an interaction than to estimate a main effect}
+https://statmodeling.stat.columbia.edu/2018/03/15/need-16-times-sample-size-estimate-interaction-estimate-main-effect/
+
+\bibitem{Hogg}
+Hogg, M.A. and Turner, J.C.
+\textit{Interpersonal Attraction, Social Identification and Psychological Group Formation}.
+European Journal of Social Psychology. 1985, 15:51-66.
+
+\bibitem{Hud}
+Hubbard, Raymond, and Lindsay, R. Murray.
+\textit{Why P Values Are Not a Useful Measure of Evidence in Statistical Significance Testing}.
+Theory and Psychology. 2008, 18(1): 69-88.
+
+\bibitem{Joh}
+Huddy, Leonie; Khatib, Nadia.
+\textit{American Patriotism, National Identity, and Political Involvement}. 
+American Journal of Political Science, January 2007, Vol. 51, No. 1.
+
+\bibitem{Kla}
+Klandermans B, Sabucedo JM, Rodriguez M et al.
+\textit{Identity processes in collective action participation: Farmers' identity and farmers' protest in the Netherlands and Spain}.
+Political Psychology. 2002, 23: 235-251.
+
+\bibitem{Boh}
+Lay, J. Celeste; Torney-Purta, Judith.
+\textit{Patriotism and Political Participation Among Russian and American Adolescents}.
+https://citeseerx.ist.psu.edu/, January 2007.
+
+\bibitem{Mad}
+Mader, Pesthy, and Schoen.
+\textit{Conceptions of national identity, turnout and party preference: Evidence from Germany}.
+Nations and Nationalism. 2020.
+
+\bibitem{Ols}
+Olson, M. 1965.
+\textit{The Logic of Collective Action: Public Goods and the Theory of Groups}.
+Cambridge, MA:Harvard University Press. 1965.
+
+\bibitem{Shaul}
+Shaul R. Shenhav1, Tamir Sheafer, Alon Zoizner1, Anita van Hoof, Jan Kleinnijenhuis, Yael Rivkah Kaplan, and David Nicolas Hopmann.
+\textit{Story incentive: the effect of national stories on voter turnout}.
+European Political Science Review. 2021, 13.
+
+\bibitem{Sims}
+Simon B and Ruhs D.
+\textit{Identity and politicization among Turkish migrants in Germany: The role of dual identification}.
+Journal of Personality and Social Psychology. 2008, 95: 1354-1366.
+
+\bibitem{Turns}
+Turner, J.C.
+\textit{Self-categorization Theory}.
+In A.S.R. Manstead and H. Miles (eds.), The Blackwell Encyclopedia of Social Psychology. Blackwell Publishing, 2006.
+
+\bibitem{Vans}
+Van Stekelenburg J, Roggeband CM and Klandermans B.
+\textit{The Future of Social Movement Research: Dynamics, Mechanisms and Processes}.
+Minnesota: University of Minnesota Press, 2013.
+
+\bibitem{verba}
+Verba, Sidney, Schlozman, Kay Lehman, Brady, Henry E.
+\textit{Voice and Equality: Civic Voluntarism in American Politics}.
+Harvard University Press. 1995.
+
+\bibitem{Whit}
+Whiteley, P.F. and Seyd.
+\textit{Rationality and Party Activism: Encompassing Tests of
+Alternative Models of Political Participation}.
+European Journal of Political Research. 1996, Vol. 29.
+
+\bibitem{Yzer}
+Yzerbyt V, Dumont M, Wigboldus D et al.
+\textit{I feel for us: The impact of categorization and identification on emotions and action tendencies}.
+British Journal of Social Psychology. 2003, 42: 533-549.
+
+\bibitem{wrd}
+World Bank.
+\textit{https://govdata360.worldbank.org/indicators/}.
+
+\bibitem{wvs}
+World Values Survey.
+\textit{https://www.worldvaluessurvey.org/WVSDocumentationWV6.jsp}.
+
+\end{thebibliography}
+
+\newpage
+\section*{Appendix}
+\subsection*{List of Relevant Survey Items}
+\begin{lstlisting}[
+    basicstyle=\footnotesize
+]
+V227 Vote in elections: National level
+V85 Petition
+V86 Joining Boycotts
+V87 Peaceful Demonstrations
+V88 Joining Strikes
+V89 Any other act of Protests
+V211 How proud of nationality
+V84 Interest in Politics
+V29 Active/Inactive membership: Political party
+V28 Active/Inactive membership: Labor Union
+V25 Active/Inactive membership: Church or religious organization
+V30 Active/Inactive membership: Environmental organization
+V32 Active/Inactive membership: Humanitarian or charitable organization
+V34 Active/Inactive membership: Self-help group, mutual aid group
+V35 Active/Inactive membership: Other organization
+V116 Confidence: Political Parties
+V118 Confidence: The Civil service
+V115 Confidence: The government (in your nation's capital)
+V105 How much you trust: People you meet for the first time
+V248 Highest education level attained
+V191 In the last 12 month, how often have you or your family: Gone without a cash income
+V229 Employment Status
+V242 Age
+v240 Sex
+
+\end{lstlisting}
+
+\end{document}
